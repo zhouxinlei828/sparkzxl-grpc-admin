@@ -1,4 +1,4 @@
-package com.sparksys.authority.infrastructure.grpc;
+package com.sparksys.authority.interfaces.rpc;
 
 import com.google.protobuf.Timestamp;
 import com.sparksys.authority.domain.repository.IAuthUserRepository;
