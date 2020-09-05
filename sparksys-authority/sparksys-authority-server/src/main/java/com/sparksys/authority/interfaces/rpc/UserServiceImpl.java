@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @date: 2020-09-04 13:35:39
  */
 @GrpcService
-public class UserServiceImpl extends  UserServiceGrpc.UserServiceImplBase {
+public class UserServiceImpl extends UserServiceGrpc.UserServiceImplBase {
 
     @Autowired
     private IAuthUserRepository userRepository;
@@ -32,8 +32,8 @@ public class UserServiceImpl extends  UserServiceGrpc.UserServiceImplBase {
                 .setAvatar(authUser.getAvatar())
                 .setEducation(false)
                 .setLastLoginTime(Timestamp.newBuilder().setNanos(authUser.getLastLoginTime().getNano()).build())
-        .setName(authUser.getName())
-        .setMobile(authUser.getMobile());
+                .setName(authUser.getName())
+                .setMobile(authUser.getMobile());
         // 返回响应
         responseObserver.onNext(builder.build());
         responseObserver.onCompleted();
