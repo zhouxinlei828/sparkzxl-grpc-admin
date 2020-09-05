@@ -1,0 +1,35 @@
+syntax = "proto3";
+option java_multiple_files = true;
+import public "google/protobuf/timestamp.proto";
+package com.sparksys.authority.proto;
+
+message UserGetRequest {
+  int64 id = 1;
+}
+
+message UserGetResponse {
+  int64 id = 1;
+  string account = 2;
+  string password = 3;
+  string name = 4;
+  int64 orgId = 5;
+  int64 stationId = 6;
+  string mobile = 7;
+  string sex = 8;
+  bool status = 9;
+  string avatar = 10;
+  bool nation = 11;
+  bool education = 12;
+  bool positionStatus = 13;
+  bool workDescribe = 14;
+  google.protobuf.Timestamp passwordErrorLastTime = 15;
+  int32 passwordErrorNum = 16;
+  google.protobuf.Timestamp passwordExpireTime = 17;
+  google.protobuf.Timestamp lastLoginTime = 18;
+}
+
+service UserService {
+
+  rpc get(UserGetRequest) returns (UserGetResponse);
+
+}
